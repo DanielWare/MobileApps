@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">p3DanielWa</string>
+    <string name="new_game">New Game</string>
+    <string name="log">Log</string>
+    <string name="x_turn">Play Tic-Tac-Toe: X\'s Turn!</string>
+    <string name="o_turn">Play Tic-Tac-Toe: O\'s Turn!</string>
+    <string name="O_winner">O was winner!</string>
+    <string name="X_winner">X was winner!</string>
+    <string name="draw">Draw!</string>
+    <string name="WINSLIST">WINSLIST</string>
+    <string name="game_number">GAME #</string>
+    <string name="log_result">RESULT</string>
+    <string name="no_data">No Log data. Play a game first!</string>
+</resources>

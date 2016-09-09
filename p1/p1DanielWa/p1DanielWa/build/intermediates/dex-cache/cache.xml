@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Dan\Google Drive\MobileApps\Homework\p1\p1DanielWa\p1DanielWa\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="a6130d81ee42dd1a913c34b43ed14419e350ee20">
+        <dex dex="C:\Users\Dan\Google Drive\MobileApps\Homework\p1\p1DanielWa\p1DanielWa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_0223ac0289ef8a7eaf50cf6218045f0fa9cb95dd\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dan\Google Drive\MobileApps\Homework\p1\p1DanielWa\p1DanielWa\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="631b3b8e429bc223becb73a5f0cd286e415c220b">
+        <dex dex="C:\Users\Dan\Google Drive\MobileApps\Homework\p1\p1DanielWa\p1DanielWa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_bf393a3e5eacfa33dafd082671df19992ddbefe0\classes.dex" />
+    </item>
+
+</items>

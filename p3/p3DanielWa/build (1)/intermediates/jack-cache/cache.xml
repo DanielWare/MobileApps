@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/darcie/Library/Android/sdk/platforms/android-24/android.jar"
+        revision="24.0.2"
+        sha1="1311cbfaf9f46b5700b213534bccdc789794b057">
+        <dex dex="/Users/darcie/Google Drive/MobileApps/Homework/p3/p3DanielWa/app/build/intermediates/jill/debug/runtime/android-6fb038677aef5c412eefb8fd59a34d1adf437dcf.jar" />
+    </item>
+
+</items>

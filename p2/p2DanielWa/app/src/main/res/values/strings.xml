@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">p2DanielWa</string>
+    <string name="num1_label">number 1 </string>
+    <string name="num2_label">number 2 </string>
+    <string name="result_label">result </string>
+    <string name="add_button_label">Add</string>
+    <string name="multiply_button_label">Multiply</string>
+    <string name="compute_to_add">Compute to add</string>
+    <string name="compute_to_multiply">Compute to multiply</string>
+    <string name="invalid_number">Please enter a valid number</string>
+
+</resources>
