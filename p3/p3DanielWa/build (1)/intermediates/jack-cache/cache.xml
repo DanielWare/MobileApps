@@ -2,10 +2,10 @@
 <items version="2" >
 
     <item
-        jar="/Users/darcie/Library/Android/sdk/platforms/android-24/android.jar"
+        jar="C:\Users\Dan\AppData\Local\Android\Sdk\platforms\android-24\android.jar"
         revision="24.0.2"
-        sha1="1311cbfaf9f46b5700b213534bccdc789794b057">
-        <dex dex="/Users/darcie/Google Drive/MobileApps/Homework/p3/p3DanielWa/app/build/intermediates/jill/debug/runtime/android-6fb038677aef5c412eefb8fd59a34d1adf437dcf.jar" />
+        sha1="d49cc0972df7adf495d3ad3d0cf71c0ec517ace4">
+        <dex dex="C:\Users\Dan\Google Drive\MobileApps\Homework\p3\p3DanielWa\app\build\intermediates\jill\debug\runtime\android-df61ade0bbb05be693c78a4ffe4db14acb84bf76.jar" />
     </item>
 
 </items>
