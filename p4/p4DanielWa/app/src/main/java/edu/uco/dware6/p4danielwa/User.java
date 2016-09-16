@@ -1,8 +1,9 @@
 package edu.uco.dware6.p4danielwa;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable{
 
     private String mFullName;
 
@@ -25,7 +26,6 @@ public class User {
         this.mClassification = mClassification;
         this.mSkills = mSkills;
     }
-
 
     public String getmFullName() {
         return mFullName;
@@ -50,4 +50,5 @@ public class User {
     public String getmSkills() {
         return mSkills;
     }
+
 }
