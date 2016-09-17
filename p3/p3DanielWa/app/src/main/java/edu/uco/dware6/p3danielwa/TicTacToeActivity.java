@@ -28,9 +28,6 @@ public class TicTacToeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe);
 
-        //mWins = AddWinnerToWins(mWins, TicType.Unticked);
-        //mWins = AddWinnerToWins(mWins, TicType.O);
-        //mWins = AddWinnerToWins(mWins, TicType.X);
 
         mGame = new TicTacToeGame();
 
