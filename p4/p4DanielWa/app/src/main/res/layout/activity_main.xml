@@ -20,6 +20,10 @@
         android:textSize="35sp"
         android:text="@string/sign_up" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
     <Button
         android:id="@+id/dept_btn"
         android:layout_width="match_parent"

@@ -7,21 +7,19 @@ public class Department {
     private String mPhoneNumber;
     private String mHomePage;
 
-    public Department(String mName, String mPhoneNumber, String mHomePage) {
-        this.mName = mName;
-        this.mPhoneNumber = mPhoneNumber;
-        this.mHomePage = mHomePage;
+    public Department(String name, String phoneNumber, String homePage) {
+        this.mName = name;
+        this.mPhoneNumber = phoneNumber;
+        this.mHomePage = homePage;
     }
 
-    public String getmName() {
-        return mName;
-    }
+    public String getName() { return mName; }
 
-    public String getmPhoneNumber() {
+    public String getPhoneNumber() {
         return mPhoneNumber;
     }
 
-    public String getmHomePage() {
+    public String getHomePage() {
         return mHomePage;
     }
 }

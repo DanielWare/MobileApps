@@ -62,7 +62,7 @@
         android:layout_alignStart="@id/password_edit"
         android:layout_alignLeft="@id/password_edit"
         android:textSize="25sp"
-        android:text="@string/start_date" />
+        android:text="@string/birthday" />
 
     <!--gender radio -->
     <TextView
@@ -106,8 +106,9 @@
         android:layout_below="@id/gender_radio_group"
         android:layout_toRightOf="@id/gender_radio_text"
         android:layout_alignStart="@id/gender_radio_group"
+        android:layout_alignEnd="@id/gender_radio_group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
     </Spinner>
 
     <!--Skills -->
@@ -129,30 +130,35 @@
         android:orientation="vertical">
 
         <CheckBox
+            android:id="@+id/skill1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="C"/>
+            android:text="@string/skill1"/>
         <CheckBox
+            android:id="@+id/skill2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="C++"/>
+            android:text="@string/skill2"/>
         <CheckBox
+            android:id="@+id/skill3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="C#"/>
+            android:text="@string/skill3"/>
         <CheckBox
+            android:id="@+id/skill4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="Java"/>
+            android:text="@string/skill4"/>
         <CheckBox
+            android:id="@+id/skill5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="Swift"/>
+            android:text="@string/skill5"/>
     </LinearLayout>
 
     <Button

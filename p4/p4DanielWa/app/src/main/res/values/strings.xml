@@ -3,7 +3,6 @@
     <string name="full_name">Full Name</string>
     <string name="dob">DOB</string>
     <string name="password">Password</string>
-    <string name="start_date">01/01/1900</string>
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
@@ -11,6 +10,12 @@
     <string name="register">[Register]</string>
     <string name="sign_up">[Sign up]</string>
     <string name="department_info">[Department Info]</string>
+    <string name="birthday">09/28/1988</string>
+    <string name="skill1">C</string>
+    <string name="skill2">C++</string>
+    <string name="skill3">C#</string>
+    <string name="skill4">Java</string>
+    <string name="skill5">Swift</string>
 
     <string-array name="array_classification">
         <item>Freshman</item>
@@ -20,5 +25,46 @@
         <item>Graduate</item>
         <item>Other</item>
     </string-array>
+
+    <string-array name="skills">
+        <item>C</item>
+        <item>C++</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Swift</item>
+    </string-array>
+
+
+    <string-array name="deptNames">
+        <item>Biology</item>
+        <item>Chemistry</item>
+        <item>Computer Science</item>
+        <item>Engineering &amp; Physics</item>
+        <item>Funeral Service</item>
+        <item>Mathematics &amp; Statistics</item>
+        <item>Nursing</item>
+    </string-array>
+
+    <string-array name="deptURLs">
+        <item>http://www.uco.edu/cms/biology/index.asp</item>
+        <item>http://www.uco.edu/cms/chemistry/index.asp</item>
+        <item>http://cs.uco.edu/www/</item>
+        <item>http://www.uco.edu/cms/engineering/index.asp</item>
+        <item>http://www.uco.edu/cms/funeral/index.asp</item>
+        <item>http://www.math.uco.edu/</item>
+        <item>http://www.uco.edu/cms/nursing/index.asp</item>
+    </string-array>
+
+    <string-array name="deptPhones">
+        <item>405-974-5017</item>
+        <item>405-974-5018</item>
+        <item>405-974-5717</item>
+        <item>405-974-5718</item>
+        <item>405-974-5001</item>
+        <item>405-974-5012</item>
+        <item>405-974-5000</item>
+    </string-array>
+
+
 
 </resources>

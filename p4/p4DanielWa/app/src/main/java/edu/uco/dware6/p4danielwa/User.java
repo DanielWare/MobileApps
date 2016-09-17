@@ -15,10 +15,9 @@ public class User implements Serializable{
 
     private ClassificationEnum mClassification;
 
-    private String mSkills;
+    private Boolean[] mSkills;
 
-
-    public User(String mFullName, String mPassword, Date mDateOfBirth, GenderEnum mGender, ClassificationEnum mClassification, String mSkills) {
+    public User(String mFullName, String mPassword, Date mDateOfBirth, GenderEnum mGender, ClassificationEnum mClassification, Boolean[] mSkills) {
         this.mFullName = mFullName;
         this.mPassword = mPassword;
         this.mDateOfBirth = mDateOfBirth;
@@ -27,27 +26,27 @@ public class User implements Serializable{
         this.mSkills = mSkills;
     }
 
-    public String getmFullName() {
+    public String getFullName() {
         return mFullName;
     }
 
-    public String getmPassword() {
+    public String getPassword() {
         return mPassword;
     }
 
-    public Date getmDateOfBirth() {
+    public Date getDateOfBirth() {
         return mDateOfBirth;
     }
 
-    public GenderEnum getmGender() {
+    public GenderEnum getGender() {
         return mGender;
     }
 
-    public ClassificationEnum getmClassification() {
+    public ClassificationEnum getClassification() {
         return mClassification;
     }
 
-    public String getmSkills() {
+    public Boolean[] getSkills() {
         return mSkills;
     }
 
