@@ -16,6 +16,7 @@
     <string name="skill3">C#</string>
     <string name="skill4">Java</string>
     <string name="skill5">Swift</string>
+    <string name="settings">Settings</string>
 
     <string-array name="array_classification">
         <item>Freshman</item>

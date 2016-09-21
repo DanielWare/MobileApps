@@ -1,8 +1,13 @@
 package edu.uco.dware6.p4danielwa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,7 +25,7 @@ public class DepartmentActivity extends Activity {
         CharSequence[] deptNames = getResources().getTextArray(R.array.deptNames);
         CharSequence[] deptNumbers = getResources().getTextArray(R.array.deptPhones);
         CharSequence[] deptURLs = getResources().getTextArray(R.array.deptURLs);
-        for(int i = 0; i < deptNames.length; i++){
+        for (int i = 0; i < deptNames.length; i++) {
             mDepartments.add(
                     new Department(
                             deptNames[i].toString(),
@@ -28,17 +33,70 @@ public class DepartmentActivity extends Activity {
                             deptURLs[i].toString()));
         }
 
-        ListView lv = (ListView)findViewById(R.id.dept_list_view);
-        String[] s = new String[] {"a", "b", "c", "d"};
+        ListView lv = (ListView) findViewById(R.id.dept_list_view);
 
-        /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.department_item, s);*/
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, R.layout.dept_item, deptNames);
 
-        DepartmentAdapter adapter = new DepartmentAdapter(this, mDepartments);
         lv.setAdapter(adapter);
 
-        //lv.setAdapter(adapter);
+        lv.setOnItemLongClickListener((parent, view, position, id) -> {
 
+            return false;
+        });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    private class ActionModeCallback implements ActionMode.Callback {
+
+        // Called when the user selects a contextual menu item
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.menu_call:
+                    Intent callIntent = new Intent();
+                    callIntent.putExtra()
+                    mode.finish(); // Action picked, so close the CAB
+                    return true;
+                case R.id.menu_url:
+
+                    mode.finish();
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        // Called when the action mode is created; startActionMode() was called
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            // Inflate a menu resource providing context menu items
+            MenuInflater inflater = mode.getMenuInflater();
+            inflater.inflate(R.menu.context_menu, menu);
+            return true;
+        }
+
+        // Called when the user exits the action mode
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+            actionMode = null;
+        }
+
+        // Called each time the action mode is shown.
+        // Always called after onCreateActionMode, but
+        // may be called multiple times if the mode is invalidated.
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            return false; // return false if nothing is done
+        }
+    }
+
+}
 
 
 }
