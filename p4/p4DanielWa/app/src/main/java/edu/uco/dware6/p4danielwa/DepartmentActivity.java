@@ -4,9 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
+<<<<<<< Updated upstream
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+=======
+import android.view.View;
+import android.widget.AdapterView;
+>>>>>>> Stashed changes
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -16,6 +21,7 @@ public class DepartmentActivity extends Activity {
 
     private ActionMode actionMode;
     private ArrayList<Department> mDepartments;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +39,35 @@ public class DepartmentActivity extends Activity {
                             deptURLs[i].toString()));
         }
 
+<<<<<<< Updated upstream
         ListView lv = (ListView) findViewById(R.id.dept_list_view);
 
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, R.layout.dept_item, deptNames);
+=======
+        ListView lv = (ListView)findViewById(R.id.dept_list_view);
+
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, R.layout.dept_item, deptNames);
+>>>>>>> Stashed changes
 
         lv.setAdapter(adapter);
+        lv.setLongClickable(true);
 
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                System.out.println("long click " + i);
+
+
+                //TODO show CAB and send mDepartments[i] phone and url // maybe name?
+
+
+<<<<<<< Updated upstream
         lv.setOnItemLongClickListener((parent, view, position, id) -> {
+=======
+                return false;
+            }
+        });
+>>>>>>> Stashed changes
 
             return false;
         });
