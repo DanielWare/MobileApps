@@ -2,6 +2,7 @@ package edu.uco.dware6.p4danielwa;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.Menu;
@@ -20,6 +21,8 @@ public class DepartmentActivity extends Activity {
     private ActionMode mActionMode;
     private ActionMode.Callback mActionModeCallback;
     private ArrayList<Department> mDepartments;
+    private Department mSelectedDepartment;
+    private boolean mCABMenuOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +56,23 @@ public class DepartmentActivity extends Activity {
                 if(mActionMode != null){
                     return false;
                 }
-
-                //TODO show CAB and send mDepartments[i] phone and url // maybe name?
+                mSelectedDepartment = mDepartments.get(i);
                 mActionMode = DepartmentActivity.this.startActionMode(mActionModeCallback);
-
                 return true;
             }
         });
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(!mCABMenuOpen){
+                    return;
+                }
+                mSelectedDepartment = mDepartments.get(i);
+            }
+        });
+
+
     }
 
     @Override
@@ -76,12 +89,13 @@ public class DepartmentActivity extends Activity {
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.menu_call:
-                    Intent callIntent = new Intent();
-
+                    Intent callIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + mSelectedDepartment.getPhoneNumber()));
+                    startActivity(callIntent);
                     mode.finish(); // Action picked, so close the CAB
                     return true;
                 case R.id.menu_url:
-
+                    Intent urlIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mSelectedDepartment.getHomePage()));
+                    startActivity(urlIntent);
                     mode.finish();
                     return true;
                 default:
@@ -95,6 +109,7 @@ public class DepartmentActivity extends Activity {
             // Inflate a menu resource providing context menu items
             MenuInflater inflater = mode.getMenuInflater();
             inflater.inflate(R.menu.context_menu, menu);
+            mCABMenuOpen = true;
             return true;
         }
 
@@ -102,6 +117,8 @@ public class DepartmentActivity extends Activity {
         @Override
         public void onDestroyActionMode(ActionMode mode) {
             mActionMode = null;
+            mSelectedDepartment = null;
+            mCABMenuOpen = false;
         }
 
         // Called each time the action mode is shown.
