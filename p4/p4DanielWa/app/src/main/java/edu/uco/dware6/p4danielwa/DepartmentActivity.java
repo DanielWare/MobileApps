@@ -4,28 +4,28 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
-<<<<<<< Updated upstream
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-=======
 import android.view.View;
 import android.widget.AdapterView;
->>>>>>> Stashed changes
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
 public class DepartmentActivity extends Activity {
 
-    private ActionMode actionMode;
+    private ActionMode mActionMode;
+    private ActionMode.Callback mActionModeCallback;
     private ArrayList<Department> mDepartments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_department);
+        mActionModeCallback = new ActionModeCallback();
         mDepartments = new ArrayList<>();
 
         CharSequence[] deptNames = getResources().getTextArray(R.array.deptNames);
@@ -39,15 +39,10 @@ public class DepartmentActivity extends Activity {
                             deptURLs[i].toString()));
         }
 
-<<<<<<< Updated upstream
         ListView lv = (ListView) findViewById(R.id.dept_list_view);
 
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, R.layout.dept_item, deptNames);
-=======
-        ListView lv = (ListView)findViewById(R.id.dept_list_view);
 
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, R.layout.dept_item, deptNames);
->>>>>>> Stashed changes
 
         lv.setAdapter(adapter);
         lv.setLongClickable(true);
@@ -55,21 +50,15 @@ public class DepartmentActivity extends Activity {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                System.out.println("long click " + i);
-
+                if(mActionMode != null){
+                    return false;
+                }
 
                 //TODO show CAB and send mDepartments[i] phone and url // maybe name?
+                mActionMode = DepartmentActivity.this.startActionMode(mActionModeCallback);
 
-
-<<<<<<< Updated upstream
-        lv.setOnItemLongClickListener((parent, view, position, id) -> {
-=======
-                return false;
+                return true;
             }
-        });
->>>>>>> Stashed changes
-
-            return false;
         });
     }
 
@@ -88,7 +77,7 @@ public class DepartmentActivity extends Activity {
             switch (item.getItemId()) {
                 case R.id.menu_call:
                     Intent callIntent = new Intent();
-                    callIntent.putExtra()
+
                     mode.finish(); // Action picked, so close the CAB
                     return true;
                 case R.id.menu_url:
@@ -112,7 +101,7 @@ public class DepartmentActivity extends Activity {
         // Called when the user exits the action mode
         @Override
         public void onDestroyActionMode(ActionMode mode) {
-            actionMode = null;
+            mActionMode = null;
         }
 
         // Called each time the action mode is shown.
@@ -127,4 +116,4 @@ public class DepartmentActivity extends Activity {
 }
 
 
-}
+
