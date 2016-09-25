@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">p5DanielWa</string>
+    <string name="my_contacts">My Contacts</string>
+    <string name="department_info">Department Info</string>
+    <string name="really_long_email_message">"This a really long email message about nothing!! This a really long email message about nothing!! This a really long email message about nothing!! This a really long email message about nothing!! This a really long email message about nothing!! This a really long email message about nothing!!"</string>
+    <string name="annoucement">Announcement from Mobile Apps class</string>
+
+
+    <string-array name="FirstNames">
+        <item>Misty</item>
+        <item>Amy</item>
+        <item>James</item>
+        <item>William</item>
+        <item>Marjorie</item>
+        <item>Mary</item>
+        <item>Johnny</item>
+        <item>Teddy</item>
+        <item>Stephen</item>
+        <item>Carlton</item>
+        <item>Robert</item>
+        <item>Simon</item>
+        <item>Corey</item>
+        <item>James</item>
+        <item>Joe</item>
+        <item>Jennie</item>
+        <item>Mark</item>
+        <item>Angela</item>
+        <item>Rochelle</item>
+        <item>Benjamin</item>
+        <item>Gail</item>
+    </string-array>
+
+    <string-array name="LastNames">
+        <item>Hicks</item>
+        <item>Bolden</item>
+        <item>Gallagher</item>
+        <item>Waltrip</item>
+        <item>Lee</item>
+        <item>Deemer</item>
+        <item>Diaz</item>
+        <item>Grimes</item>
+        <item>Vogelsang</item>
+        <item>Stewart</item>
+        <item>Kinder</item>
+        <item>Cooper</item>
+        <item>Godfrey</item>
+        <item>Lamb</item>
+        <item>Allen</item>
+        <item>Austin</item>
+        <item>Switzer</item>
+        <item>Biggs</item>
+        <item>Young</item>
+        <item>Milne</item>
+        <item>Stevenson</item>
+    </string-array>
+
+    <string-array name="PhoneNumbers">
+        <item>614-304-7720</item>
+        <item>562-395-5644</item>
+        <item>603-358-6605</item>
+        <item>706-650-5339</item>
+        <item>815-960-9537</item>
+        <item>501-982-1482</item>
+        <item>623-388-0064</item>
+        <item>757-623-2428</item>
+        <item>407-514-1433</item>
+        <item>347-258-0125</item>
+        <item>253-318-8336</item>
+        <item>812-330-6540</item>
+        <item>501-550-6588</item>
+        <item>802-293-9593</item>
+        <item>407-834-2866</item>
+        <item>574-266-9354</item>
+        <item>352-614-5254</item>
+        <item>916-352-9763</item>
+        <item>214-638-9414</item>
+        <item>606-886-1056</item>
+        <item>707-501-4535</item>
+    </string-array>
+
+    <string-array name="Emails">
+        <item>MistyJHicks@armyspy.com</item>
+        <item>AmyDBolden@jourrapide.com</item>
+        <item>JamesDGallagher@rhyta.com</item>
+        <item>WilliamKWaltrip@armyspy.com</item>
+        <item>MarjorieTLee@jourrapide.com</item>
+        <item>MaryJDeemer@jourrapide.com</item>
+        <item>JohnnyLDiaz@rhyta.com</item>
+        <item>TeddyJGrimes@armyspy.com</item>
+        <item>StephenAVogelsang@dayrep.com</item>
+        <item>CarltonMStewart@dayrep.com</item>
+        <item>RobertAKinder@armyspy.com</item>
+        <item>SimonBCooper@rhyta.com</item>
+        <item>CoreyCGodfrey@teleworm.us</item>
+        <item>JamesLLamb@dayrep.com</item>
+        <item>JoeCAllen@jourrapide.com</item>
+        <item>JennieAAustin@teleworm.us</item>
+        <item>MarkESwitzer@armyspy.com</item>
+        <item>AngelaRBiggs@dayrep.com</item>
+        <item>RochelleTYoung@teleworm.us</item>
+        <item>BenjaminLMilne@armyspy.com</item>
+        <item>GailTStevenson@rhyta.com</item>
+    </string-array>
+
+    <string-array name="deptNames">
+        <item>Biology</item>
+        <item>Chemistry</item>
+        <item>Computer Science</item>
+        <item>Engineering &amp; Physics</item>
+        <item>Funeral Service</item>
+        <item>Mathematics &amp; Statistics</item>
+        <item>Nursing</item>
+    </string-array>
+
+    <string-array name="deptURLs">
+        <item>http://www.uco.edu/cms/biology/index.asp</item>
+        <item>http://www.uco.edu/cms/chemistry/index.asp</item>
+        <item>http://cs.uco.edu/www/</item>
+        <item>http://www.uco.edu/cms/engineering/index.asp</item>
+        <item>http://www.uco.edu/cms/funeral/index.asp</item>
+        <item>http://www.math.uco.edu/</item>
+        <item>http://www.uco.edu/cms/nursing/index.asp</item>
+    </string-array>
+
+
+</resources>
