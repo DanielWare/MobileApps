@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">p6DanielWa</string>
     <string name="submit">Submit</string>
+    <string name="google_maps_key">AIzaSyAlJ6f3FLLW9w4aWlSBEJXBPuCKrZ6RXLM</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="enter_a_city_name">Enter a City Name</string>
+    <string name="city_name">City Name</string>
 </resources>

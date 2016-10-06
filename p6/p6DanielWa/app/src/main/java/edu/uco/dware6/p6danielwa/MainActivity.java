@@ -1,9 +1,11 @@
 package edu.uco.dware6.p6danielwa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,19 +27,42 @@ public class MainActivity extends Activity {
 
     Button mapButton;
 
-    TextView weatherDisplay;
+    TextView weatherLatLng;
+    TextView weatherTemp;
+    TextView weatherWindSpeed;
+    TextView weatherDescription;
+
+    City recentCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.submit_button).setOnClickListener(v->{
-            new WeatherRequest(((EditText)findViewById(R.id.city_name)).getText().toString());
+        findViewById(R.id.submit_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String cityName = ((EditText)findViewById(R.id.city_name)).getText().toString();
+                WeatherRequest wr = new WeatherRequest(FORECAST_BASE_URL);
+                wr.execute(new City(cityName));
+            }
         });
 
         mapButton = (Button)findViewById(R.id.map_button);
-        weatherDisplay = (TextView)findViewById(R.id.weather_display);
+
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, MapsActivity.class);
+                i.putExtra("City", recentCity);
+                startActivity(i);
+            }
+        });
+
+        weatherLatLng = (TextView)findViewById(R.id.weather_latlng);
+        weatherTemp = (TextView)findViewById(R.id.weather_temp);
+        weatherWindSpeed = (TextView)findViewById(R.id.weather_wind_speed);
+        weatherDescription = (TextView)findViewById(R.id.weather_desc);
     }
 
     private class WeatherRequest extends AsyncTask<City, Void, City> {
@@ -58,7 +83,7 @@ public class MainActivity extends Activity {
                 Uri builtUri = Uri.parse(baseUrl).buildUpon()
                         .appendQueryParameter("q", c.getName()+",us")
                         .appendQueryParameter("mode", "json")
-                        .appendQueryParameter("units", "metric")
+                        .appendQueryParameter("units", "imperial")
                         .appendQueryParameter("cnt", "1")
                         .appendQueryParameter("APPID", "d7512169aa5c42bba4c45bbb49be4a00")
                         .build();
@@ -90,9 +115,12 @@ public class MainActivity extends Activity {
             mapButton.setText(result.getName());
             mapButton.setClickable(true);
 
-            weatherDisplay.setText(result.getWeatherInfo());
+            weatherLatLng.setText(result.getLatitudeLng().getDescription());
+            weatherTemp.setText("Temperature(F): " + result.getTemp());
+            weatherWindSpeed.setText("Wind Speed(Mph): " + result.getWindSpeed());
+            weatherDescription.setText("Description: " + result.getWeatherDescription());
 
-
+            recentCity = result;
         }
     }
 

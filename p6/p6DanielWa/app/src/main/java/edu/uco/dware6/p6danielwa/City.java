@@ -5,22 +5,34 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class City {
+import java.io.Serializable;
+
+public class City implements Serializable {
 
     private String name;
 
-    private LatLng latLng;
+    private LatitudeLng latitudeLng;
 
     private float temp;
+
+    private String weatherDescription;
+
+    private float windSpeed;
 
     private String errorText;
 
     private boolean JSONSuccess;
 
-    public City(String name, LatLng latLng, float temp) {
+    public City(String name, LatitudeLng latitudeLng, float temp, String weatherDescription, float windSpeed) {
         this.name = name;
-        this.latLng = latLng;
+        this.latitudeLng = latitudeLng;
         this.temp = temp;
+        this.weatherDescription = weatherDescription;
+        this.windSpeed = windSpeed;
+    }
+
+    public City(String name){
+        this.name = name;
     }
 
     public String getName() {
@@ -31,16 +43,16 @@ public class City {
         this.name = name;
     }
 
-    public LatLng getLatLng() {
-        return latLng;
+    public LatitudeLng getLatitudeLng() {
+        return latitudeLng;
     }
 
-    public void setLatLng(LatLng latLng) {
-        this.latLng = latLng;
+    public void setLatitudeLng(LatitudeLng latitudeLng) {
+        this.latitudeLng = latitudeLng;
     }
 
     public void setLatLng(String lat, String lng){
-        this.latLng = new LatLng(lat, lng);
+        this.latitudeLng = new LatitudeLng(lat, lng);
     }
 
     public float getTemp() {
@@ -49,6 +61,31 @@ public class City {
 
     public void setTemp(float temp) {
         this.temp = temp;
+    }
+
+    public String getWeatherDescription() {
+        return weatherDescription;
+    }
+
+    public void setWeatherDescription(String weatherDescription) {
+        this.weatherDescription = weatherDescription;
+    }
+
+    public float getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(float windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+
+    public void setWindSpeed(String speed){
+        try{
+            windSpeed = Float.parseFloat(speed);
+        }catch(NumberFormatException ex){
+            this.windSpeed = -999;
+            System.out.println("failed to parse float: " + ex.getMessage());
+        }
     }
 
     public boolean getJSONSuccess(){
@@ -65,10 +102,6 @@ public class City {
 
     }
 
-    public String getWeatherInfo(){
-        return getName() + " T: " + getTemp() + " LatLng: " + getLatLng().toString();
-    }
-
     public String getErrorText(){
         return this.errorText;
     }
@@ -77,19 +110,30 @@ public class City {
         try{
             JSONObject o = new JSONObject(data);
 
-            JSONObject cityName = o.getJSONObject("city");
-            if(!cityName.getString("name").equalsIgnoreCase(getName())){
-                errorText = "ERROR! " + getName() + " does not equal " + cityName.getString("name");
+            //check city name
+            JSONObject cityObject = o.getJSONObject("city");
+            if(!cityObject.getString("name").equalsIgnoreCase(getName())){
+                errorText = "ERROR! " + getName() + " is not a valid city name. Try again!";
                 JSONSuccess = false;
                 return;
             }
-            JSONObject coord = o.getJSONObject("coord");
-            setLatLng(new LatLng(coord.getString("lat"), coord.getString("lon")));
+            //set city coord
+            JSONObject coord = cityObject.getJSONObject("coord");
+            setLatitudeLng(new LatitudeLng(coord.getString("lat"), coord.getString("lon")));
 
-            JSONArray list = o.getJSONArray("list");
-            JSONObject main = list.getJSONObject(0).getJSONObject("main");
+            //set city temp
+            JSONArray listObject = o.getJSONArray("list");
+            JSONObject tempObject = listObject.getJSONObject(0).getJSONObject("temp");
 
-            setTemp(main.getString("temp"));
+            setTemp(tempObject.getString("day"));
+
+            //set city weather desc
+            JSONArray weatherArray = listObject.getJSONObject(0).getJSONArray("weather");
+            setWeatherDescription(weatherArray.getJSONObject(0).getString("description"));
+
+            //set wind speed
+            setWindSpeed(listObject.getJSONObject(0).getString("speed"));
+
             JSONSuccess = true;
         }catch(JSONException j){
             errorText = "ERROR! JSONException: " + j.getMessage();

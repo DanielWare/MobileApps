@@ -13,27 +13,58 @@
 
     <EditText
         android:id="@+id/city_name"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="City Name"/>
+        android:inputType="textCapWords"
+        android:layout_gravity="center"
+        android:hint="@string/city_name"
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/submit_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/submit"/>
+
+    <TextView
+        android:id="@+id/weather_latlng"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/submit"/>
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/weather_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/weather_wind_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/weather_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/map_button"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text=""
-        android:clickable="false"/>
-
-    <TextView
-        android:id="@+id/weather_display"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:hint="@string/enter_a_city_name"/>
 </LinearLayout>
