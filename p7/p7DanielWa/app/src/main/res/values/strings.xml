@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">p7DanielWa</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string-array name="deptNames">
+        <item>Biology</item>
+        <item>Chemistry</item>
+        <item>Computer Science</item>
+        <item>Engineering &amp; Physics</item>
+        <item>Funeral Service</item>
+        <item>Mathematics &amp; Statistics</item>
+        <item>Nursing</item>
+    </string-array>
+
+    <string-array name="deptURLs">
+        <item>http://www.uco.edu/cms/biology/index.asp</item>
+        <item>http://www.uco.edu/cms/chemistry/index.asp</item>
+        <item>http://cs.uco.edu/www/</item>
+        <item>http://www.uco.edu/cms/engineering/index.asp</item>
+        <item>http://www.uco.edu/cms/funeral/index.asp</item>
+        <item>http://www.math.uco.edu/</item>
+        <item>http://www.uco.edu/cms/nursing/index.asp</item>
+    </string-array>
+
+    <string-array name="deptPhones">
+        <item>405-974-5017</item>
+        <item>405-974-5018</item>
+        <item>405-974-5717</item>
+        <item>405-974-5718</item>
+        <item>405-974-5001</item>
+        <item>405-974-5012</item>
+        <item>405-974-5000</item>
+    </string-array>
+
+    <string-array name="deptLatitudes">
+        <item>123</item>
+    </string-array>
+
+    <string-array name="deptLongitudes">
+        <item>456</item>
+    </string-array>
+
+</resources>

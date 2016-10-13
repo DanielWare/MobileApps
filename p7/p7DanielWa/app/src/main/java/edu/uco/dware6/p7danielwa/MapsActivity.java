@@ -1,4 +1,4 @@
-package edu.uco.dware6.p6danielwa;
+package edu.uco.dware6.p7danielwa;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,25 +18,22 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends Activity implements OnMapReadyCallback{
+public class MapsActivity extends Activity implements OnMapReadyCallback {
 
     private GoogleMap map;
     private City currentCity;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
         currentCity = null;
         currentCity = (City)getIntent().getSerializableExtra("City");
-        if(getIntent().hasExtra("city")){
-            
-        }
-
     }
 
 
@@ -81,9 +78,5 @@ public class MapsActivity extends Activity implements OnMapReadyCallback{
         });
 
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(cityCoord, 13f));
-
-
     }
-
-
 }
