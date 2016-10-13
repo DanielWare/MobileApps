@@ -23,20 +23,32 @@ public class SmsReceiver extends BroadcastReceiver {
 
             SmsMessage currentMessage = msg[msg.length-1];
 
-            switch(currentMessage.getDisplayOriginatingAddress()){
+            String number = currentMessage.getDisplayOriginatingAddress();
+
+            switch(number){
                 case "1111111111":
                     if(currentMessage.getDisplayMessageBody().equalsIgnoreCase("phone")){
-                        Intent i = new Intent(context, MapsActivity.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        context.startActivity(i);
+                        Intent phoneIntent = new Intent(context, MapsActivity.class);
+                        phoneIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        phoneIntent.putExtra("ContentType", ContentType.PHONE);
+                        context.startActivity(phoneIntent);
+                        break;
                     }else if(currentMessage.getDisplayMessageBody().equalsIgnoreCase("web")){
-
+                        Intent webIntent = new Intent(context, MapsActivity.class);
+                        webIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        webIntent.putExtra("ContentType", ContentType.WEB);
+                        context.startActivity(webIntent);
+                        break;
                     }else{
                         toastOnError(currentMessage, context);
+                        break;
                     }
-                    break;
                 case "1111112222":
-
+                    Intent weatherIntent = new Intent(context, WeatherActivity.class);
+                    weatherIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    City c = new City(currentMessage.getDisplayMessageBody().toString());
+                    weatherIntent.putExtra("city", c);
+                    context.startActivity(weatherIntent);
                     break;
                 default:
                     toastOnError(currentMessage, context);

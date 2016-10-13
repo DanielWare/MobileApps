@@ -33,11 +33,23 @@
     </string-array>
 
     <string-array name="deptLatitudes">
-        <item>123</item>
+        <item>35.654702</item>
+        <item>35.654605</item>
+        <item>35.653824</item>
+        <item>35.654947</item>
+        <item>35.653604</item>
+        <item>35.654140</item>
+        <item>35.653277</item>
     </string-array>
 
     <string-array name="deptLongitudes">
-        <item>456</item>
+        <item>-97.472735</item>
+        <item>-97.472408</item>
+        <item>-97.472789</item>
+        <item>-97.472547</item>
+        <item>-97.473727</item>
+        <item>-97.472601</item>
+        <item>-97.473352</item>
     </string-array>
 
 </resources>
